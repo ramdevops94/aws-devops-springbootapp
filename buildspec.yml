@@ -6,10 +6,8 @@ phases:
       #checking version
       - aws --version
       #- $(aws ecr get-login --region ap-south-1 --no-include-email)
-      # update below 
-      - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 303670280975.dkr.ecr.us-east-1.amazonaws.com
-      - # Replace with this to your repository URI
-      - REPOSITORY_URI=303670280975.dkr.ecr.us-east-1.amazonaws.com/awsdevopsecr
+      - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 437424868362.dkr.ecr.us-east-1.amazonaws.com
+      - REPOSITORY_URI=437424868362.dkr.ecr.us-east-1.amazonaws.com/aws-devops-springbootapp
       - IMAGE_TAG=build-$(echo $CODEBUILD_BUILD_ID | awk -F":" '{print $2}')
   build:
     commands:
